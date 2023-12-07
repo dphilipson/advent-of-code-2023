@@ -1,3 +1,8 @@
-Part 1 expected: 
-Part 2 expected: 
+Part 1 expected: 6440
+Part 2 expected: 5905
 
+32T3K 765
+T55J5 684
+KK677 28
+KTJJT 220
+QQQJA 483
