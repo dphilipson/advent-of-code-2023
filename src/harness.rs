@@ -14,8 +14,8 @@ pub fn solve<F1, F2, O1, O2>(day: usize, solve_part1: F1, solve_part2: F2)
 where
     F1: RefUnwindSafe + Fn(RawInput) -> O1,
     F2: RefUnwindSafe + Fn(RawInput) -> O2,
-    O1: Display + Eq + FromStr,
-    O2: Display + Eq + FromStr,
+    O1: Display + PartialEq + FromStr,
+    O2: Display + PartialEq + FromStr,
     <O1 as FromStr>::Err: error::Error + 'static,
     <O2 as FromStr>::Err: error::Error + 'static,
 {
@@ -60,7 +60,7 @@ fn solve_part<F, O>(
     }: SolvePartArgs<F, O>,
 ) where
     F: RefUnwindSafe + Fn(RawInput) -> O,
-    O: Display + Eq,
+    O: Display + PartialEq,
 {
     if let Some(expected) = test_expected_output {
         if let Some(test_output) = panics::catching_todo(|| solve(RawInput::new(test_input))) {
