@@ -6,7 +6,7 @@ use std::ops::{Index, IndexMut};
 use std::str::FromStr;
 
 #[derive(Clone, Debug, Eq, PartialEq)]
-pub struct Grid<T>(pub Array2<T>);
+pub struct Grid<T>(Array2<T>);
 
 impl Grid<u32> {
     pub fn parse_digits(s: &str) -> Self {
@@ -50,7 +50,7 @@ impl<T> IndexMut<[usize; 2]> for Grid<T> {
     }
 }
 
-impl<T: Default> Grid<T> {
+impl<T: Clone + Default> Grid<T> {
     pub fn nrows(&self) -> usize {
         self.0.nrows()
     }
@@ -91,6 +91,10 @@ impl<T: Default> Grid<T> {
         T: 'a,
     {
         Grid(self.0.map(f))
+    }
+
+    pub fn transpose(&self) -> Grid<T> {
+        Self(self.0.clone().reversed_axes())
     }
 }
 
