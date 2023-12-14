@@ -1,3 +1,13 @@
-Part 1 expected: 
-Part 2 expected: 
+Part 1 expected: 136
+Part 2 expected: 64
 
+O....#....
+O.OO#....#
+.....##...
+OO.#O....O
+.O.....O#.
+O.#..O.#.#
+..O..#O..O
+.......O..
+#....###..
+#OO..#....
