@@ -1,8 +1,8 @@
-pub mod day19;
+pub mod day22;
 
-pub use day19 as day;
+pub use day22 as day;
 
-pub const DAY: usize = 19;
+pub const DAY: usize = 22;
 
 // Uncomment below to compile all days instead of just the current one.
 
